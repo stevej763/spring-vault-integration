@@ -8,7 +8,7 @@ Simple app built to experiment and learn how to integrate vault into a spring bo
 
 `@ConstructorBinding` annotation on `AppSecrets` tells spring to instantiate the class using the constructor.
 
-`ApplicationConfiguration` takes that `VaultSecrets` Java object and passes it into the constructor of a service which would then make use of them, e.g. API keys, dev, stage, prod urls etc.
+`ApplicationConfiguration` takes that `AppSecrets` Java object and passes it into the constructor of a service which would then make use of them, e.g. API keys, dev, stage, prod urls etc.
 
 `@ConfigurationPropertiesScan` annotation on `ApplicationConfiguration` tells spring where to look for any configuration properties.
 
