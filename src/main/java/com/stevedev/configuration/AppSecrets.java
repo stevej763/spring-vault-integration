@@ -1,7 +1,10 @@
 package com.stevedev.configuration;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
+
+import static org.apache.commons.lang3.builder.ToStringStyle.MULTI_LINE_STYLE;
 
 @ConfigurationProperties(prefix = "vault")
 @ConstructorBinding
@@ -37,12 +40,6 @@ public class AppSecrets {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("AppSecrets{");
-        sb.append("apiKey='").append(apiKey).append('\'');
-        sb.append(", username='").append(username).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append(", uuid='").append(uuid).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return ToStringBuilder.reflectionToString(this, MULTI_LINE_STYLE);
     }
 }
